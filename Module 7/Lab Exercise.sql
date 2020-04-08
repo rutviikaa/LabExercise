@@ -163,6 +163,9 @@ CREATE TABLE [dbo].[CopyFactInternetSales]
 	[ShipDate] [datetime] NULL
 )
 
+INSERT INTO [AdventureWorksDW].[dbo].[CopyFactInternetSales] ([ProductKey], [OrderDateKey], [DueDateKey], [ShipDateKey], [CustomerKey], [PromotionKey], [CurrencyKey], [SalesTerritoryKey], [SalesOrderNumber], [SalesOrderLineNumber], [RevisionNumber], [OrderQuantity], [UnitPrice], [ExtendedAmount], [UnitPriceDiscountPct], [DiscountAmount], [ProductStandardCost], [TotalProductCost], [SalesAmount], [TaxAmt], [Freight], [CarrierTrackingNumber], [CustomerPONumber], [OrderDate], [DueDate], [ShipDate]) SELECT [ProductKey], [OrderDateKey], [DueDateKey], [ShipDateKey], [CustomerKey], [PromotionKey], [CurrencyKey], [SalesTerritoryKey], [SalesOrderNumber], [SalesOrderLineNumber], [RevisionNumber], [OrderQuantity], [UnitPrice], [ExtendedAmount], [UnitPriceDiscountPct], [DiscountAmount], [ProductStandardCost], [TotalProductCost], [SalesAmount], [TaxAmt], [Freight], [CarrierTrackingNumber], [CustomerPONumber], [OrderDate], [DueDate], [ShipDate] FROM [AdventureWorksDW].[dbo].[FactInternetSales] 
+GO
+
 DROP INDEX CCI_FactInternetSales ON FactInternetSales; 
 DROP INDEX [NCI_FactIneternetSales_ShipDateKey] ON [dbo].[FactInternetSales];
 DROP INDEX [NCI_FactInternetSales_CurrencyKey] ON [dbo].[FactInternetSales];

@@ -21,7 +21,7 @@ GO
 
 -- Step 4 - Use the EXECUTE AS statement to change context
 
-EXECUTE AS User = 'SecureUser';
+EXECUTE AS User = 'guest';
 GO
 
 -- Step 5 - Try to execute the procedure. Why does it not it work?
@@ -36,12 +36,12 @@ GO
 
 -- Step 7 - Grant permission to SecureUser to execute the procedure
 
-GRANT EXECUTE ON dbo.DisplayExecutionContext TO SecureUser;
+GRANT EXECUTE ON dbo.DisplayExecutionContext TO guest;
 GO
 
 -- Step 8 - Now try again and note the output
 
-EXECUTE AS User = 'SecureUser';
+EXECUTE AS User = 'guest';
 GO
 
 EXEC dbo.DisplayExecutionContext;
@@ -64,7 +64,7 @@ GO
 
 -- Step 10 - Execute as SecureUser again and note the difference
 
-EXECUTE AS User = 'SecureUser';
+EXECUTE AS User = 'guest';
 GO
 
 EXEC dbo.DisplayExecutionContext;

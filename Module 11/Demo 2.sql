@@ -33,7 +33,7 @@ SELECT * FROM Sales.SalesTerritoryHistory WHERE BusinessEntityID = 283;
 GO
 
 DELETE FROM Sales.SalesTerritoryHistory 
-WHERE BusinessEntityID = 283;
+WHERE BusinessEntityID = 1;
 GO
 
 -- Step E: Drop the trigger
